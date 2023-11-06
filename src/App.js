@@ -17,10 +17,10 @@ export default function App() {
   }
 
   return(
-    <div>
-      <h1>Shopping List</h1>
+    <div className='container'>
+      <h1 className='title'>Shopping List</h1>
       <form onSubmit={handleSumbit}>
-        <label htmlFor="shoppingListItem">Items To Buy</label>
+        <label htmlFor="shoppingListItem">Items To Buy: </label>
         <input type='text' required
          value={shoppingListItem}
          onChange={(e)=> setShoppingListItem(e.target.value)}
@@ -29,9 +29,10 @@ export default function App() {
       </form>
       <div>
         {shoppingList.map((item) => (
-        <div key={item}>
+        <div className='list' key={item}>
           <p>{item}</p>
-          <button onClick={() => handleDeleteOption(item)}>Delete</button>
+          <button className='button' 
+          onClick={() => handleDeleteOption(item)}>Remove</button>
         </div>))}
       </div>
     </div>
